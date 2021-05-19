@@ -1,0 +1,6 @@
+Expected:
+38,Côte de Blaye,18,263.59,12 - 75 cl bottles,False
+Actual:
+38,Côte de Blaye,18,263.50,12 - 75 cl bottles,False
+Number of differences: 
+Number of matching: 6

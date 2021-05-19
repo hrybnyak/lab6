@@ -50,15 +50,20 @@ namespace lab6.MigrationTests
 
                 using (var sw = new StreamWriter("Difference1.csv"))
                 {
-                    var differences = new List<QueryResult1>();
+                    int differences = 0;
                     for (int i = 0; i < deserializedExpected.Count; i++)
                     {
                         if (!deserializedExpected[i].Equals(actual[i]))
                         {
-                            differences.Add(actual[i]);
+                            differences++;
+                            sw.WriteLine("Expected:");
+                            sw.WriteLine($"{deserializedExpected[i].CompanyName},{deserializedExpected[i].NumberOfSuppliedProducts}");
+                            sw.WriteLine("Actual:");
+                            sw.WriteLine($"{actual[i].CompanyName},{actual[i].NumberOfSuppliedProducts}");
                         }
                     }
-                    sw.Write(CsvSerializer.SerializeToString(differences));
+                    sw.WriteLine("Number of differences: ", differences);
+                    sw.WriteLine($"Number of matching: {actual.Count - differences}");
                 }
             }
         }
@@ -79,17 +84,22 @@ namespace lab6.MigrationTests
 
                 var deserializedExpected = File.ReadAllText("Expected2.csv").FromCsv<List<Product>>();
 
-                using (var sw = new StreamWriter("Difference2.csv"))
+                using (var sw = new StreamWriter("Difference2.log"))
                 {
-                    var differences = new List<Product>();
+                    var differences = 0;
                     for (int i = 0; i < deserializedExpected.Count; i++)
                     {
                         if (!deserializedExpected[i].Equals(actual[i]))
                         {
-                            differences.Add(actual[i]);
+                            differences = differences + 1;
+                            sw.WriteLine("Expected:");
+                            sw.WriteLine($"{deserializedExpected[i].Id},{deserializedExpected[i].ProductName},{deserializedExpected[i].SupplierId},{deserializedExpected[i].UnitPrice},{deserializedExpected[i].Package},{deserializedExpected[i].IsDiscontinued}");
+                            sw.WriteLine("Actual:");
+                            sw.WriteLine($"{actual[i].Id},{actual[i].ProductName},{actual[i].SupplierId},{actual[i].UnitPrice},{actual[i].Package},{actual[i].IsDiscontinued}");
                         }
                     }
-                    sw.Write(CsvSerializer.SerializeToString(differences));
+                    sw.WriteLine("Number of differences: ", differences);
+                    sw.WriteLine($"Number of matching: {actual.Count - differences}");
                 }
             }
         }

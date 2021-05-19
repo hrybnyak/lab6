@@ -1,6 +1,22 @@
-CompanyName,NumberOfSuppliedProducts
+Expected:
+Escargots Nouveaux,2
+Actual:
 Escargots Nouveaux,1
-"G'day, Mate",3
+Expected:
+G'day Mate,3
+Actual:
+G'day, Mate,3
+Expected:
+Heli Sübwaren GmbH & Co. KG,3
+Actual:
 Heli Süßwaren GmbH & Co. KG,3
-"Pavlova, Ltd.",5
-"Specialty Biscuits, Ltd.",4
+Expected:
+Pavlova Ltd.,5
+Actual:
+Pavlova, Ltd.,5
+Expected:
+Specialty Biscuits Ltd.,4
+Actual:
+Specialty Biscuits, Ltd.,4
+Number of differences: 
+Number of matching: 24

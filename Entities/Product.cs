@@ -15,5 +15,16 @@ namespace lab6.Entities
         public string Package { get; set; }
         public bool IsDiscontinued { get; set; }
         public Supplier Supplier { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            var product = obj as Product;
+            return product.Id == this.Id
+                && product.IsDiscontinued == this.IsDiscontinued
+                && product.SupplierId == this.SupplierId
+                && product.UnitPrice == this.UnitPrice
+                && product.ProductName == this.ProductName
+                && product.Package == this.Package;
+        }
     }
 }
