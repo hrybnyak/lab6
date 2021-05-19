@@ -1,0 +1,8 @@
+Id,ProductName,SupplierId,UnitPrice,Package,IsDiscontinued,Supplier
+51,Manjimup Dried Apples,24,53.00,50 - 300 g pkgs.,False,
+59,Raclette Courdavault,28,55.00,5 kg pkg.,False,
+18,Carnarvon Tigers,7,62.50,16 kg pkg.,False,
+20,Sir Rodney's Marmalade,8,81.00,30 gift boxes,False,
+9,Mishi Kobe Niku,4,97.00,18 - 500 g pkgs.,True,
+29,Thüringer Rostbratwurst,12,123.79,50 bags x 30 sausgs.,True,
+38,Côte de Blaye,18,263.50,12 - 75 cl bottles,False,
